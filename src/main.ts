@@ -16,13 +16,13 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 
 // setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
 
-const PADDING = 8;
-const ITEM_SIZE = 182.4 - PADDING;
+// const PADDING = 8;
+// const ITEM_SIZE = 182.4 - PADDING;
 
 const select = (elem: string) => document.querySelector(elem) as HTMLElement;
-const selectAll = (elem: string): HTMLElement[] =>
-  Array.from(document.querySelectorAll(elem));
-const create = (elem: string): HTMLElement => document.createElement(elem);
+// const selectAll = (elem: string): HTMLElement[] =>
+//   Array.from(document.querySelectorAll(elem));
+// const create = (elem: string): HTMLElement => document.createElement(elem);
 
 window.addEventListener("load", () => {
   const content = select(".content");
