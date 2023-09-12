@@ -1,97 +1,103 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 6rem;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --font-xl: 12rem;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --color-white: #ffffff;
+  --color-white-1: #fafafa;
+  --color-dark: #020202;
+  --color-dark-1: #040404;
+  --color-dark-2: #101010;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-a:hover {
-  color: #535bf2;
+
+html {
+  block-size: 100%;
 }
 
 body {
-  margin: 0;
+  min-block-size: 100%;
+  font-family: "Acme", sans-serif;
+  overscroll-behavior: none;
+  background-image: linear-gradient(
+    to left,
+    var(--color-dark-1),
+    var(--color-dark-2)
+  );
+  overflow: hidden;
+}
+
+.heading {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+  flex-direction: column;
+  align-items: center;
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  & > .heading-text {
+    color: var(--color-white-1);
+    text-transform: uppercase;
+    letter-spacing: 5px;
   }
-  a:hover {
-    color: #747bff;
+
+  & > svg {
+    fill: var(--color-white-1);
+    width: 35px;
+    height: 35px;
+    animation-name: bounce;
+    animation-timing-function: ease;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: auto;
+  padding: var(--space-3);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.picture {
+}
+
+.content {
+}
+
+.scroll-content {
+}
+
+img {
+  inline-size: 100%;
+  block-size: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
