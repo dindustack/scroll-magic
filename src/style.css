@@ -7,7 +7,9 @@
   --space-6: 3rem;
   --space-7: 6rem;
 
+  --font-md: 3rem;
   --font-xl: 12rem;
+  --item-size: calc(182.4px - var(var(--space-2)));
 
   --color-white: #ffffff;
   --color-white-1: #fafafa;
@@ -75,12 +77,57 @@ body {
 }
 
 .picture {
+  position: absolute;
+  block-size: 400px;
+  inline-size: 600px;
+  overflow: hidden;
+  left: 14%;
+  top: 54%;
+  z-index: -1;
+
+  & img {
+    position: absolute;
+    transform: translate3d(0px, 500px, 0px) scale(1.5);
+  }
 }
 
 .content {
+  block-size: 100%;
 }
 
 .scroll-content {
+  position: relative;
+  block-size: auto;
+  display: flex !important;
+  flex-direction: column;
+}
+
+.item-container-full {
+  position: absolute;
+  right: 0;
+  height: var(--item-size);
+  overflow: hidden;
+}
+
+.item {
+  z-index: 100;
+  line-height: 0.95;
+}
+
+.title-full {
+  color: var(--color-white);
+}
+
+.title {
+  font-size: var(--font-xl);
+  text-transform: uppercase;
+  font-family: "Acme";
+  text-align: right;
+}
+
+.title-transparent {
+  -webkit-text-stroke: 1px var(--color-white);
+  color: transparent;
 }
 
 img {
@@ -99,5 +146,11 @@ img {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: var(--font-md);
   }
 }
